@@ -1,0 +1,19 @@
+{
+  "name": "cf-backbone-view",
+  "version": "1.0.0",
+  "description": "setting up a backbone view that takes in numbers and outputs mean, median, mode for those numbers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bmccaffray/cf-backbone-view.git"
+  },
+  "author": "brett mccaffray",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bmccaffray/cf-backbone-view/issues"
+  },
+  "homepage": "https://github.com/bmccaffray/cf-backbone-view"
+}
