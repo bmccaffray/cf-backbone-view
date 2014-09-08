@@ -18,8 +18,6 @@ module.exports = Backbone.View.extend({
 		var template = require('../templates/equation-template.hbs');
 		var data = this.model.attributes;
 		this.$el.html(template(data));
-		// this.$el.children('#mmm').append(noteView.$el);
-		//this.$el.children('#mmm').append(this.$el);
 
 		var valNums = this.model.get('numbers');
 		valNums = valNums.toString().split(',').join(' ');
