@@ -3,6 +3,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-browserify');
+	grunt.loadNpmTasks('grunt-mocha');
 
 	grunt.initConfig({
 		clean: {
@@ -27,9 +28,26 @@ module.exports = function(grunt){
 				},
 				src: ['app/js/**/*.js'],
 				dest: 'build/bundle.js'
+			},
+			test: {
+				options: {
+					transform: ['debowerify', 'hbsfy'],
+					debug: true
+				},
+				src: ['test/mocha/eq*.js'],
+				dest: 'test/testbundle.js'
+			}
+		},
+		mocha: {
+			backbonetest: {
+				src:['test/test.html'],
+				options: {
+					run: true
+				}
 			}
 		}
 	});
 
 	grunt.registerTask('build:dev', ['clean:dev', 'browserify:dev', 'copy:dev']);
+	grunt.registerTask('build:test', ['browserify:test', 'mocha:backbonetest']);
 }
